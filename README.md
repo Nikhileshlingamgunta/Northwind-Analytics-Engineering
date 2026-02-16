@@ -1,4 +1,44 @@
 # Northwind Analytics Engineering Capstone (dbt + DuckDB + Metabase)
+## Architecture
+
+```text
+                ┌─────────────────────────────┐
+                │        Raw CSV Seeds         │
+                │  (Northwind extract files)   │
+                └──────────────┬──────────────┘
+                               │  dbt seed
+                               ▼
+                ┌─────────────────────────────┐
+                │          DuckDB              │
+                │         dev.duckdb           │
+                └──────────────┬──────────────┘
+                               │  dbt run
+                               ▼
+        ┌──────────────────────────────────────────────┐
+        │                 dbt Models                   │
+        │  Staging: stg_*   →   Marts: dim_*/fct_*     │
+        │  KPI marts: mart_* (monthly_kpis, cohorts,   │
+        │  customer_health, data_quality_scorecard)    │
+        └──────────────┬───────────────────────────────┘
+                       │  dbt test + documentation
+                       ▼
+        ┌──────────────────────────────────────────────┐
+        │              Trust Layer (dbt)               │
+        │  - not_null / unique / relationships tests   │
+        │  - reproducible transformations              │
+        │  - lineage & docs                            │
+        └──────────────┬───────────────────────────────┘
+                       │  BI connection (DuckDB driver)
+                       ▼
+        ┌──────────────────────────────────────────────┐
+        │                  Metabase                    │
+        │  4-page Executive Dashboard:                 │
+        │  1) Executive Overview                       │
+        │  2) Customer Inactivity                      │
+        │  3) Cohort Retention                         │
+        │  4) Data Quality Scorecard                   │
+        └──────────────────────────────────────────────┘
+
 Overview
 
 This project demonstrates an end-to-end analytics engineering workflow using the classic Northwind dataset. I built a modern analytics stack on a local machine using:
