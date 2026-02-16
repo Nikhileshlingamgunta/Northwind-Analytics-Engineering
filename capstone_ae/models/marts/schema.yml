@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: dim_customer
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: dim_product
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+
+  - name: fct_order_items
+    columns:
+      - name: order_id
+        tests: [not_null]
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_id
+
+  - name: mart_customer_health
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: inactive_30
+        tests: [not_null]
+      - name: inactive_90
+        tests: [not_null]
+      - name: inactive_180
+        tests: [not_null]
+      - name: inactive_365
+        tests: [not_null]
+
+  - name: mart_customer_cohorts
+    columns:
+      - name: cohort_month
+        tests: [not_null]
+      - name: months_since_first
+        tests: [not_null]
+      - name: active_customers
+        tests: [not_null]
+      - name: cohort_size
+        tests: [not_null]
+      - name: retention_rate
+        tests: [not_null]
+
+  - name: mart_monthly_kpis
+    columns:
+      - name: order_month
+        tests: [not_null, unique]
+      - name: total_orders
+        tests: [not_null]
+      - name: total_revenue
+        tests: [not_null]
+      - name: active_customers
+        tests: [not_null]
+
+  - name: mart_data_quality_scorecard
+    columns:
+      - name: table_name
+        tests: [not_null, unique]
+      - name: row_count
+        tests: [not_null]
+      - name: pk_completeness_rate
+        tests: [not_null]
+
+  - name: mart_monthly_kpis
+    columns:
+      - name: order_month
+        tests: [not_null, unique]
+      - name: total_orders
+        tests: [not_null]
+      - name: total_revenue
+        tests: [not_null]
+      - name: active_customers
+        tests: [not_null]
+
+  - name: mart_data_quality_scorecard
+    columns:
+      - name: table_name
+        tests: [not_null, unique]
+      - name: row_count
+        tests: [not_null]
+      - name: null_primary_keys
+        tests: [not_null]
+      - name: pk_completeness_rate
+        tests: [not_null]

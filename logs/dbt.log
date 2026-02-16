@@ -1,0 +1,47 @@
+[0m11:39:22.971300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10304b260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1079cf200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1079cef30>]}
+
+
+============================== 11:39:22.974967 | 32a4a226-8d53-4dbb-9225-a194aeabb600 ==============================
+[0m11:39:22.974967 [info ] [MainThread]: Running with dbt=1.11.5
+[0m11:39:22.975299 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'write_json': 'True', 'quiet': 'False', 'target_path': 'None', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init capstone_ae', 'profiles_dir': '/Users/nikhileshlingamgunta/.dbt', 'log_cache_events': 'False', 'printer_width': '80', 'static_parser': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'debug': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'partial_parse': 'True', 'introspect': 'True', 'log_format': 'default', 'version_check': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m11:39:22.986298 [info ] [MainThread]: Creating dbt configuration folder at /Users/nikhileshlingamgunta/.dbt
+[0m11:39:22.987293 [debug] [MainThread]: Starter project path: /Users/nikhileshlingamgunta/Desktop/My_Projects/analytics-engineer-capstone/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m11:39:22.994694 [info ] [MainThread]: 
+Your new dbt project "capstone_ae" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:39:22.994933 [info ] [MainThread]: Setting up your profile.
+[0m11:39:55.807376 [info ] [MainThread]: Profile capstone_ae written to /Users/nikhileshlingamgunta/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m11:39:55.868683 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 32.945133, "process_in_blocks": "0", "process_kernel_time": 0.205568, "process_mem_max_rss": "105512960", "process_out_blocks": "0", "process_user_time": 0.759968}
+[0m11:39:55.869203 [debug] [MainThread]: Command `dbt init` succeeded at 11:39:55.869074 after 32.95 seconds
+[0m11:39:55.869533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107aec170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a5cfb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a42b40>]}
+[0m11:39:55.869849 [debug] [MainThread]: Flushing usage events
+[0m11:39:56.388742 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:29:14.771081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11197ae40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1128cf800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1128cf560>]}
+
+
+============================== 14:29:14.773913 | 019ed695-4adb-4b88-a374-442e71f1559e ==============================
+[0m14:29:14.773913 [info ] [MainThread]: Running with dbt=1.11.5
+[0m14:29:14.774327 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'introspect': 'True', 'log_format': 'default', 'use_colors': 'True', 'fail_fast': 'False', 'debug': 'False', 'partial_parse': 'True', 'empty': 'False', 'warn_error': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'target_path': 'None', 'log_path': 'logs', 'no_print': 'None', 'invocation_command': 'dbt run --select mart_customer_health', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'profiles_dir': '/Users/nikhileshlingamgunta/.dbt', 'static_parser': 'True', 'printer_width': '80', 'quiet': 'False'}
+[0m14:29:14.774713 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/nikhileshlingamgunta/Desktop/My_Projects/analytics-engineer-capstone/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m14:29:14.797537 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.066346, "process_in_blocks": "0", "process_kernel_time": 0.183643, "process_mem_max_rss": "107151360", "process_out_blocks": "0", "process_user_time": 0.707882}
+[0m14:29:14.797863 [debug] [MainThread]: Command `dbt run` failed at 14:29:14.797812 after 0.07 seconds
+[0m14:29:14.798045 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1128cf650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1128cf8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1128cf740>]}
+[0m14:29:14.798223 [debug] [MainThread]: Flushing usage events
+[0m14:29:15.104471 [debug] [MainThread]: An error was encountered while trying to flush usage events
