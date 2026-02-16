@@ -119,6 +119,7 @@ java -jar metabase.jar
 
 Metabase runs at:
 	•	http://localhost:3000
+	
 2) Add DuckDB database in Metabase
 	•	Admin → Databases → Add database
 	•	Choose DuckDB
